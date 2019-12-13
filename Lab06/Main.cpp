@@ -34,49 +34,49 @@
 // Kody zrodlowe musza znajdowac sie w katalogu do ktorego nikt oprocz
 // wlasciciela nie ma praw dostepu.
 
-#ifdef MAPLIB
-    #include "MapPoint.h"
-#endif
+ #ifdef MAPLIB
+     #include "MapPoint.h"
+ #endif
 
-int main() {
+ int main() {
 
-  //========== KRK ========================
-  const MapPoint krk("KRK",19.938333,50.061389);
-  Coordinates krkCoordinates = krk.GetCoordinates();
-  std::cout<< "Point: KRK "
-           << "("<< krkCoordinates.Latitude()
-           << ","<< krkCoordinates.Longitude()
-           << ")"<<std::endl;
+//   //========== KRK ========================
+   const MapPoint krk("KRK",19.938333,50.061389);
+   Coordinates krkCoordinates = krk.GetCoordinates();
+   std::cout<< "Point: KRK "
+            << "("<< krkCoordinates.Latitude()
+            << ","<< krkCoordinates.Longitude()
+            << ")"<<std::endl;
 
-  //========== NYC ========================
-  const double latitude = 40.7127;
-  const double longitude = -74.0059;
-  MapPoint nyc("NYC");
-  //Coordinates& nycCoordinates = nyc.GetCoordinates();
- //nycCoordinates.Latitude(latitude);
-  //nycCoordinates.Longitude(longitude);
-  nyc.Print();
+//   //========== NYC ========================
+   const double latitude = 40.7127;
+   const double longitude = -74.0059;
+   MapPoint nyc("NYC");
+   Coordinates& nycCoordinates = nyc.GetCoordinates();
+   nycCoordinates.Latitude(latitude);
+   nycCoordinates.Longitude(longitude);
+   nyc.Print();
 
-  //========== PORTO ======================
-  MapPoint porto;
-  porto.SetId("PRT");
-  //porto.GetCoordinates().Set(41.162142, -8.621953);
-  porto.Print();
+   //========== PORTO ======================
+   MapPoint porto;
+   porto.SetId("PRT");
+   porto.GetCoordinatesPtr()->Set(41.162142, -8.621953);
+   porto.Print();
 
-  //========== GENERAL MAP INTERFACE ======================
-  //unsigned nPoints = MapPoint::NumberOfPoints();
-  //std::cout << "Number of MapPoints defined: " 
-            //<< nPoints 
-            //<< std::endl;
+   //========== GENERAL MAP INTERFACE ======================
+   unsigned nPoints = MapPoint::NumberOfPoints();
+   std::cout << "Number of MapPoints defined: " 
+             << nPoints 
+             << std::endl;
 
-  // Pole zadane przez współrzedne trzech punktów:
-  // pole = 1/2 * ((x2-x1)*(y3-y1)-(x3-x1)*(y2-y1))
-  //double area = surfaceTriangleArea(krk,nyc,porto);
-  //std::cout << "Triangle area: " 
-           // << area 
-           // << std::endl;
+   // Pole zadane przez współrzedne trzech punktów:
+   // pole = 1/2 * ((x2-x1)*(y3-y1)-(x3-x1)*(y2-y1))
+   double area = surfaceTriangleArea(&krk,&nyc,&porto);
+   std::cout << "Triangle area: " 
+             << area 
+             << std::endl;
 
-  //return 0;
+   return 0;
 }
 
 /** Wynik dzialania programu:

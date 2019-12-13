@@ -49,7 +49,7 @@ void GradeBook::Summary()
     float sum = 0;
     for(int i=0; i<_sizeOfList; i++)
         sum+=_list[i]->_grade;
-    std::cout<< "[[GradeBook]: Summary: Average of grades: " << sum/_sizeOfList << std::endl;
+    std::cout<< "[GradeBook]: Summary: Average of grades: " << sum/_sizeOfList << std::endl;
 
 }
 

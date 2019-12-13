@@ -1,0 +1,3 @@
+/home/dawid/PPO2019/Lab07/build/CMakeFiles/rebuild_cache.dir
+/home/dawid/PPO2019/Lab07/build/CMakeFiles/studentsList.dir
+/home/dawid/PPO2019/Lab07/build/CMakeFiles/edit_cache.dir

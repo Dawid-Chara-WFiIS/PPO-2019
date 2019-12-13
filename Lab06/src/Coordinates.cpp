@@ -1,11 +1,27 @@
 #include "Coordinates.h"
 
-float Coordinates::Latitude()
+double Coordinates::Longitude() const
+{
+    return _long;
+}
+
+double Coordinates::Latitude() const
 {
     return _lat;
 }
 
-float Coordinates::Longitude()
+void Coordinates::Set(double latitude, double longitude)
 {
-    return _longi;
+    _lat = latitude;
+    _long = longitude;
+}
+
+void Coordinates::Latitude(const double latitude)
+{
+    _lat = latitude;
+}
+
+void Coordinates::Longitude(const double longitude)
+{
+    _long = longitude;
 }

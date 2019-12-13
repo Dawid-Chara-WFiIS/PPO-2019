@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/Main.cpp" "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/build/CMakeFiles/map.dir/Main.cpp.o"
-  "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/Coordinates.cpp" "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/build/CMakeFiles/map.dir/src/Coordinates.cpp.o"
-  "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/MapPoint.cpp" "/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/build/CMakeFiles/map.dir/src/MapPoint.cpp.o"
+  "/home/dawid/PPO2019/Lab06/Main.cpp" "/home/dawid/PPO2019/Lab06/build/CMakeFiles/map.dir/Main.cpp.o"
+  "/home/dawid/PPO2019/Lab06/src/Coordinates.cpp" "/home/dawid/PPO2019/Lab06/build/CMakeFiles/map.dir/src/Coordinates.cpp.o"
+  "/home/dawid/PPO2019/Lab06/src/MapPoint.cpp" "/home/dawid/PPO2019/Lab06/build/CMakeFiles/map.dir/src/MapPoint.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

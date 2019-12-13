@@ -7,28 +7,26 @@
 #IncludeRegexTransform: 
 
 ../include/Coordinates.h
-MapPoint.h
-../include/MapPoint.h
 
 ../include/MapPoint.h
-Coordinates.h
-../include/Coordinates.h
-string.h
--
 iostream
 -
-cmath
+string.h
 -
-
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/Main.cpp
-MapPoint.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/MapPoint.h
-
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/Coordinates.cpp
 Coordinates.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/Coordinates.h
+../include/Coordinates.h
 
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/MapPoint.cpp
+/home/dawid/PPO2019/Lab06/Main.cpp
 MapPoint.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab8_L6/src/MapPoint.h
+/home/dawid/PPO2019/Lab06/MapPoint.h
+
+/home/dawid/PPO2019/Lab06/src/Coordinates.cpp
+Coordinates.h
+/home/dawid/PPO2019/Lab06/src/Coordinates.h
+
+/home/dawid/PPO2019/Lab06/src/MapPoint.cpp
+MapPoint.h
+/home/dawid/PPO2019/Lab06/src/MapPoint.h
+Coordinates.h
+/home/dawid/PPO2019/Lab06/src/Coordinates.h
 

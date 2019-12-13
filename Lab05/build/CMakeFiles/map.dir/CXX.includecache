@@ -20,19 +20,17 @@ iostream
 cmath
 -
 
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/Main.cpp
+/home/dawid/PPO2019/Lab05/Main.cpp
 MapPoint.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/MapPoint.h
+/home/dawid/PPO2019/Lab05/MapPoint.h
 
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapDistance.cpp
-MapPoint.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapPoint.h
+/home/dawid/PPO2019/Lab05/src/MapDistance.cpp
 MapDistance.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapDistance.h
+/home/dawid/PPO2019/Lab05/src/MapDistance.h
 
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapPoint.cpp
+/home/dawid/PPO2019/Lab05/src/MapPoint.cpp
 MapPoint.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapPoint.h
+/home/dawid/PPO2019/Lab05/src/MapPoint.h
 MapDistance.h
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/src/MapDistance.h
+/home/dawid/PPO2019/Lab05/src/MapDistance.h
 

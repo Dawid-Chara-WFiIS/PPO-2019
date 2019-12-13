@@ -1,14 +1,13 @@
-#include "MapPoint.h"
 #include "MapDistance.h"
 // ---------------------------- MAP DISTANCE INTERFACE -------------------------------------------
 
 void MapDistance::SetParams(std::string distanceName, float latDistance, float longiDistance)
 {
-    this->_distanceName = distanceName;
-    this->_latDistance = latDistance;
-    this->_longiDistance = longiDistance;
+    _distanceName = distanceName;
+    _latDistance = latDistance;
+    _longiDistance = longiDistance;
 }
 void MapDistance::Print()
 {
-    std::cout <<  "Distance: " << this->_distanceName << " (" << this->_latDistance << ", " << this->_longiDistance << ")" << std::endl;
+    std::cout <<  "Distance: " << _distanceName << " (" << _latDistance << ", " <<_longiDistance << ")" << std::endl;
 }

@@ -1,16 +1,14 @@
 #pragma once
-#include "MapPoint.h"
 
 
 class Coordinates{
-  
-    friend class MapPoint;
     public:
-        Coordinates() = default;
-        float Latitude() ;
-        float Longitude() ;
-
-    private:
-        float  _lat;
-        float  _longi;
+        double Latitude() const;
+        double Longitude() const;
+        void Set(double, double);
+        void Latitude(const double);
+        void Longitude(const double);
+    private: 
+        double _lat;
+        double _long;
 };

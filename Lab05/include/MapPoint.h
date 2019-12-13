@@ -9,7 +9,7 @@ class MapPoint
 {
     
     public:
-        MapPoint();
+        MapPoint() = default;
         MapPoint(std::string, float, float);
         MapPoint(std::string);
         void Print();

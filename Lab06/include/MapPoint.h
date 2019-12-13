@@ -1,30 +1,28 @@
 #pragma once
-#include "Coordinates.h"
-#include <string.h>
 #include <iostream>
-#include <cmath>
+#include <string.h>
+#include "Coordinates.h"
 
-typedef int nPoints;
-
-class MapPoint
-{
-
-    friend class Coordinates;
+class MapPoint{
     public:
-        MapPoint() = default;
-        MapPoint(std::string, float, float);
+        static int numberOfPoints;
+        MapPoint(std::string, double, double);
         MapPoint(std::string);
-        void Print();
-        void Longitude(float) ;
-        void Latitude(float) ;
-        void SetId(std::string);
-        Coordinates GetCoordinates();
+        MapPoint();
+        Coordinates GetCoordinates() const;
         Coordinates& GetCoordinates();
+        void Print() const;
+        void SetId(std::string name);
+        static int NumberOfPoints() {return MapPoint::numberOfPoints;};
+        Coordinates* GetCoordinatesPtr();
+        friend double surfaceTriangleArea(const MapPoint*, MapPoint*, MapPoint*);
+
+
 
     private:
+        double _long;
+        double _lat;
         std::string _name;
-        float _lat;
-        float _longi;
-
+        Coordinates _coords;
+        
 };
-

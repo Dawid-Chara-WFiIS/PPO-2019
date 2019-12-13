@@ -1,4 +1,4 @@
-# Install script for directory: /home/stud2018/8chara/Desktop/PPO2019/Lab07
+# Install script for directory: /home/dawid/PPO2019/Lab05
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/stud2018/8chara/Desktop/PPO2019/Lab07/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dawid/PPO2019/Lab05/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
