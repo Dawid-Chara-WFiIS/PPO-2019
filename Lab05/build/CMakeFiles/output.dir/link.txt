@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall -g  -rdynamic CMakeFiles/output.dir/Main.cpp.o CMakeFiles/output.dir/src/GeometricSeries.cpp.o CMakeFiles/output.dir/src/HarmonicSeries.cpp.o CMakeFiles/output.dir/src/SeriesInterface.cpp.o  -o output 

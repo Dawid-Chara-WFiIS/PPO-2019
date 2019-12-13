@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/GeometricSeries.h
+SeriesInterface.h
+../include/SeriesInterface.h
+
+../include/HarmonicSeries.h
+SeriesInterface.h
+../include/SeriesInterface.h
+
+../include/SeriesInterface.h
+cstdio
+-
+iostream
+-
+
+/home/dawid/PPO2019/Lab05/Main.cpp
+GeometricSeries.h
+/home/dawid/PPO2019/Lab05/GeometricSeries.h
+HarmonicSeries.h
+/home/dawid/PPO2019/Lab05/HarmonicSeries.h
+
+/home/dawid/PPO2019/Lab05/src/GeometricSeries.cpp
+iostream
+-
+GeometricSeries.h
+/home/dawid/PPO2019/Lab05/src/GeometricSeries.h
+
+/home/dawid/PPO2019/Lab05/src/HarmonicSeries.cpp
+iostream
+-
+HarmonicSeries.h
+/home/dawid/PPO2019/Lab05/src/HarmonicSeries.h
+
+/home/dawid/PPO2019/Lab05/src/SeriesInterface.cpp
+SeriesInterface.h
+/home/dawid/PPO2019/Lab05/src/SeriesInterface.h
+
