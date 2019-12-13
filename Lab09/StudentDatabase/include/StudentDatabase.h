@@ -6,7 +6,8 @@
 
 class StudentDatabase{
     public:
-        StudentDatabase(std::string, StudentsList*, GradeBook*);
+        StudentDatabase(std::string databaseName, StudentsList* listOfStudents,  GradeBook* bookOfGrades) : 
+        _databaseName(databaseName), _listOfStudents(listOfStudents), _bookOfGrades(bookOfGrades) {}
         void Show() const;
         StudentDatabase() : _databaseName("Default") {}
     private:

@@ -9,6 +9,13 @@ int main()
   goodStudents.Insert(new Grade(4),"Complex numbers calculation");
   goodStudents.AddGrade(4.5, "C++");
   goodStudents.AddGrade(4.5);
-  StudentDatabase db;
+  StudentsList computerScienceList ("Computer science");
+  Student* archer = new Student ("Sterling", "Archer");
+  computerScienceList.AddStudent(archer);
+  computerScienceList.AddStudent(new Student("Rick", "Sanchez"));
+  const Student* spiegel = new Student ("Spike", "Spiegel");
+  computerScienceList.AddStudent(spiegel);
+
+  StudentDatabase db("Example", &computerScienceList, &goodStudents);
   db.Show();
 }
