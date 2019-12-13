@@ -1,3 +1,0 @@
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/build/CMakeFiles/rebuild_cache.dir
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/build/CMakeFiles/map.dir
-/home/stud2018/8chara/Desktop/PPO2019/Lab07/build/CMakeFiles/edit_cache.dir

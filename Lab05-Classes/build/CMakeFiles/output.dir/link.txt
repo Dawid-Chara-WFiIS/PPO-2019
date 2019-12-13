@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++11 -Wall -g  -rdynamic CMakeFiles/output.dir/Main.cpp.o CMakeFiles/output.dir/src/Series.cpp.o  -o output 

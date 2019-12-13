@@ -1,3 +1,0 @@
-/home/dawid/Pulpit/PPO2019/Lab05-Classes/build/CMakeFiles/rebuild_cache.dir
-/home/dawid/Pulpit/PPO2019/Lab05-Classes/build/CMakeFiles/output.dir
-/home/dawid/Pulpit/PPO2019/Lab05-Classes/build/CMakeFiles/edit_cache.dir

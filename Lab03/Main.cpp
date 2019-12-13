@@ -3,8 +3,8 @@
 
 // *** ZADANIE ***
 // Prosze napisac funkcje tworzace i operaujace na ciagach. Nalezy
-// utworzyc ciagi harmoniczne o pierwszym wyrazie 1 i zadanym
-// rozmiarze. Oprocz tego nalezy obliczyc sume oraz iloczyn wszystkich
+// utworzyc ciagi geometryczne o pierwszym wyrazie 1 i zadanym
+// ilorazie. Oprocz tego nalezy obliczyc sume oraz iloczyn wszystkich
 // elementow ciagu, a takze znalezc jego najwiekszy i najmniejszy element.
 // Uwaga: odpowiednie komentarze są również w kodzie źródłowym funkcji main()
 
@@ -26,60 +26,73 @@
 // Kody źródłowe muszą znajdować się w katalogu ~/preoop/lab_LABNR. Prawa
 // do tego katalogu muszą być równe 700 (tylko dostęp dla właściciela).
 
-// Skonczone zadanie nalezy wyslac na UPEL w formie spakowanego katalogu (lab_03)
-// do archiwum lab_03.tar.gz
-// tar -czvf lab_03.tar.gz lab_03/
+// Skonczone zadanie nalezy wyslac na UPEL w formie spakowanego katalogu (lab_04)
+// do archiwum lab_04.tar.gz
+// tar -czvf lab_04.tar.gz lab_04/
 
-#include "HarmonicSeries.h"
+#include "GeometricSeries.h"
+
 int main ()
 {
-  const Size size = 5;      // rozmiar ciagu harmonicznego
+  const Size size = 4;      // rozmiar ciagu geometrycznego
   
   // uwaga: pierwszy element ciagu to 1:
   //        a_0 = 1
-  //        a_1 = 1 / 2
-  //        a_2 = 1 / 3
+  //        a_1 = a_0 * ratio
+  //        a_2 = a_1 * ratio
   //        ...
-  //        a_size-1 = 1 / size
+  //        a_size-1 = a_size-2 * ratio
 
-  const SeriesPtr hSeriesPtr1 = InitializeHarmonicSeries (size);
-  const SeriesPtr hSeriesPtr2 = InitializeHarmonicSeries (size);
+  const float ratio1 = 2;   // iloraz ciągu
+  const SeriesPtr gSeriesPtr1 = InitializeGeometricSeries (size, ratio1);
+  
+  
+  const float ratio2 = 3.;  // iloraz ciągu
+  const SeriesPtr gSeriesPtr2 = InitializeGeometricSeries (size, ratio2);
 
   // proszę zadbać o odpowiednie formatowanie wyjścia:
-  PrintSeries(hSeriesPtr1, size);
-  PrintSeries(hSeriesPtr2, size); 
+  PrintSeries(gSeriesPtr1, size);
+  PrintSeries(gSeriesPtr2, size); 
   
-  SeriesType hSeriesSum = SeriesSum(hSeriesPtr1, size);
+  SeriesType gSeriesSum = SeriesSum(gSeriesPtr1, size);
   
-  printf("Sum of harmonic series: %.2f\n",hSeriesSum);
+  printf("Sum of geometric series: %.2f\n",gSeriesSum);
   
   // przypomnienie: SeriesFunctionPtr jest wskaźnikiem na funkcję:
   // - z odpowiednim typem zwracanym
   // - o odpowiednich parametrach formalnych
   // - wskaźnik tego typu definiujemy poprzez typedef ...
 
-  SeriesFunctionPtr hSeriesFunContainer [] = { SeriesProduct  // funkcja zwraca iloczyn wszystkich elementów ciągu
+  SeriesFunctionPtr gSeriesFunContainer [] = { SeriesProduct  // funkcja zwraca iloczyn wszystkich elementów ciągu
                                               ,SeriesSum      // funkcja zwraca suma wszystkich elementów ciągu
                                               ,SeriesMax      // funkcja zwraca element o wartości maksymalanej 
                                               ,SeriesMin };   // funkcja zwraca element o wartości maksymalanej 
   
-  const int nOperations = sizeof(hSeriesFunContainer)/sizeof(SeriesFunctionPtr);
+  const int nOperations = sizeof(gSeriesFunContainer)/sizeof(SeriesFunctionPtr);
   
   printf("Series operations:\n");
   for (int i = 0; i < nOperations; ++i)
-    RunAndPrint (hSeriesFunContainer[i], hSeriesPtr2, size); // proszę zadbać o odpowiednie formatowanie wyjścia
+    RunAndPrint (gSeriesFunContainer[i], gSeriesPtr1, size);
 
-  DeleteSeries(hSeriesPtr1);
-  DeleteSeries(hSeriesPtr2);
+  DeleteSeries();
+
+  for (int i = 0; i < 66; ++i)
+   InitializeGeometricSeries(10, 2.4);
+  DeleteSeries();
+
 }
 /* wynik dzialania programu:
-brachwal@vbox:[Lab03]$ ./run 
-  1.00  0.50  0.33  0.25  0.20
-  1.00  0.50  0.33  0.25  0.20
-Sum of harmonic series: 2.28
+brachwal@vbox:[Lab04]$ ./run 
+    1    2    4    8
+    1    3    9   27
+Sum of geometric series: 15.00
 Series operations:
-Product: 0.01
-Sum: 2.28
-Maximum: 1.00
-Minimum: 0.20
+Product: 64
+Sum: 15
+Maximum: 8
+Minimum: 1
+Deleting 2 series...
+ *** Memory cleanded up ***
+Deleting 66 series...
+ *** Memory cleanded up ***
 */

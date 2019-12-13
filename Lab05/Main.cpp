@@ -1,131 +1,93 @@
 // Prosze dopisac kod, dodac nowe pliki, tak aby program wykonywal
-// sie, a wynik jego dzialania byl taki sam jak podany na końcu tego pliku.
+// sie, a wynik jego dzialania byl taki sam jak podany na końcu tego
+// pliku.
 
-// *** ZADANIE ***
-// Zadanie jest w znacznej części oparte o poprzednie 2 zajęcie. W zasadzie
-// polega od odpowiednim połączeniu dotychczas zaimplementowanego kodu.
-// Prosze napisac funkcje tworzace i operaujace na ciagach. Nalezy
-// utworzyc ciagi geometryczne i harmoniczne zdefiniowane poniżej w kodzie 
-// źródłowym funkcji main(). Oprocz tego nalezy obliczyc sume oraz iloczyn wszystkich
-// elementow ciagu, a takze znalezc jego najwiekszy i najmniejszy element.
+// Prosze napisac klase MapPoint, ktora reprezentuje punkt na
+// mapie skladajacy sie z dlugosci (longitude) i szerokosci
+// (latitude) geograficznej bez oznaczania polkol.
 
-// Prosze zadbac o dobre zarzadzanie pamiecia oraz niepowtarzający sie kod 
-// (o tej samej funkcjonalności)
+// Prosze napisac klase MapDistance która reprezentuje odleglosc pomiedzy dwoma
+// punktami. Odleglosc wzdloz poludnikow lub rownoleznikow nalezy
+// obliczyc po prostu odejmujac od siebie wspolrzedne punktow
+// poczatkowego i koncowego.
 
-// Plik Main.cpp, w ostatecznej wersji programu nie powinien być zmodyfikowany!
+// Implementację i działanie metody poszczególnych klas proszę wywnioskować
+// z treści main().
+
+// Metoda MapDistance::Print() wypisuje na ekran, informacje o odleglosci
+// (przechowaywanej w zmiennych badacych skladowymi tej klasy)
+
+// Metoda MapPoint::Farthest() klasy MapPoint, zwraca punkt bedacy najdalej punktu na rzecz
+// ktorego zostala wywolana metoda. Odleglosc pomiedzy punktami nalezy
+// obliczyc jako pierwiastek sumy kwadratow roznic, czyli
+// r = sqrt(delta_dlugosc*delta_dlugosc + delta_szerokosc*delta_szerokosc)
+// Funkcja obliczajaca pierwiastek nazywa sie: 
+// sqrt(double) i znajduje sie w bibliotece "cmath".
+
+// Pliku Main.cpp, nie wolno modyfikowac.
+
+// Strukturę plików w projekcie prosze wywnioskować z załączonego pliku CMakeLists.txt
+// UWAGA: jest to krytyczny punkt brany pod uwagę w ocenie! W głównym katalogu projektu
+//        mogą znajdować się pliki CMakelists.txt oraz Main.cpp
 
 // Ostateczny program powinien byc przyjazny dla programisty (miec
-// czytelny i dobrze napisany kod). 
+// czytelny i dobrze napisany kod).
 
-// *** ORGANIZACJA/STRUKTURA PROGRAMU***
-// W zadaniu należy skorzystać z programu cmake, tak więc rozwiązanie 
-// powinno zawierać CMakeLists.txt
-// Pliki z kodem źródłowym mają być zorganizowane z wykorzystaniem katalogów:
-// /Lab06/
-//       /CMakeLists.txt
-//       /Main.cpp
-//       /src/GeometricSeries.cpp
-//       /src/HarmonicSeries.cpp
-//       /src/*.cpp
-//       /include/GeometricSeries.h
-//       /include/HarmonicSeries.h
-//       /include/*.h
-// *.cpp (*.h) oznaczają inne pliki z kodem źródłowym, które mogą zostać dodane do projektu
+// Przy wykonaniu zadania nie wolno korzystac z internetu, notatek,
+// ani zadnych innych materialow (w tym własnych wczesniej
+// przygotowanych plikow oprócz Makefile lub CMakeLists.txt)
 
+// Kody zrodlowe musza znajdowac sie w katalogu do ktorego nikt oprocz
+// wlasciciela nie ma praw dostepu.
 
-// *** OGRANICZENIA ***
-// Przy wykonaniu zadania nie wolno korzystać z internetu, notatek,
-// ani żadnych innych materiałów (w tym własnych wcześniej
-// przygotowanych plików, oprócz Makefile)
+#ifdef MAPCALC              // defined by the CMakeLists
+    #include "MapPoint.h"
+#endif
 
-// Kody źródłowe muszą znajdować się w katalogu ~/preoop/lab_LABNR. Prawa
-// do tego katalogu muszą być równe 700 (tylko dostęp dla właściciela).
+int main() {
 
-// Skonczone zadanie nalezy wyslac na UPEL w formie spakowanego katalogu (lab_06)
-// do archiwum lab_06.tar.gz
-// tar -czvf lab_06.tar.gz lab_06/
+  //========== KRK ========================
+  MapPoint krk("KRK",19.938333,50.061389);
+  krk.Print();
 
-#include "GeometricSeries.h"
-#include "HarmonicSeries.h"
+   //========== NYC ========================
+   const double nyc_latitude = -74.0059;
+   const double nyc_longitude = 40.7127;
+  MapPoint nyc("NYC");
+   nyc.Longitude(nyc_longitude);
+   nyc.Latitude(nyc_latitude);
+   nyc.Print();
 
-int main ()
-{
-  const Size size = 4;      // rozmiar ciagu geometrycznego
-  
-  // GEOMETRIC SERIES
-  // uwaga: pierwszy element ciagu to 1:
-  //        a_0 = 1
-  //        a_1 = a_0 * ratio
-  //        a_2 = a_1 * ratio
-  //        ...
-  //        a_size-1 = a_size-2 * ratio
+   //========== PORTO ======================
+   MapPoint porto;
+   porto.SetId("PRT");
+   porto.Coordinates(41.162142, -8.621953);
+   porto.Print();
 
-  const float ratio = 2;   // iloraz ciągu
-  const SeriesPtr gSeriesPtr = InitializeGeometricSeries (size, ratio);
+   //========== IRKUTSK ====================
+   MapPoint irkutsk("IRK");
+   irkutsk.Coordinates(52.283333, 104.283333);
+   irkutsk.Print();
 
-  // HARMONIC SERIES
-  // uwaga: pierwszy element ciagu to 1:
-  //        a_0 = 1
-  //        a_1 = 1 / 2
-  //        a_2 = 1 / 3
-  //        ...
-  //        a_size-1 = 1 / size
+   //========== DISTANCE ===================
+   MapDistance nyc_porto;
+   nyc_porto.Print();
+   nyc_porto = nyc.Distance(porto);
+   nyc_porto.Print();
 
-  const SeriesPtr hSeriesPtr = InitializeHarmonicSeries (size);
+   //========== FARTHEST ===================
+   krk.Farthest(porto, irkutsk).Print();
 
-  // proszę zadbać o odpowiednie formatowanie wyjścia:
-  PrintSeries(gSeriesPtr, size);
-  PrintSeries(hSeriesPtr, size); 
-  
-  SeriesType gSeriesSum = SeriesSum(gSeriesPtr, size);
-  SeriesType hSeriesSum = SeriesSum(hSeriesPtr, size);
-  
-  printf("Sum of geometric series: %.2f\n",gSeriesSum);
-  printf("Sum of harmonic series: %.2f\n",hSeriesSum);
-
-  SeriesFunctionPtr seriesFunContainer [] = { SeriesProduct
-                                              ,SeriesSum    
-                                              ,SeriesMax    
-                                              ,SeriesMin }; 
-  
-  const int nOperations = sizeof(seriesFunContainer)/sizeof(SeriesFunctionPtr);
-  
-  printf("** Geometric series operations **\n");
-  for (int i = 0; i < nOperations; ++i)
-    RunAndPrint (seriesFunContainer[i], gSeriesPtr, size);
-
-  printf("** Harmonic series operations **\n");
-  for (const auto& functionPtr : seriesFunContainer)
-    RunAndPrint (functionPtr, hSeriesPtr, size);
-  
-  DeleteSeries();
-
-  for (int i = 0; i < 66; ++i){
-   InitializeGeometricSeries(10, 2.4);
-   InitializeHarmonicSeries(10);
- }
-
-  DeleteSeries();
-
+   return 0;
 }
-/* wynik dzialania programu:
-brachwal@vbox:[build]$ ./run 
- 1.00 2.00 4.00 8.00
- 1.00 0.50 0.33 0.25
-Sum of geometric series: 15.00
-Sum of harmonic series: 2.08
-** Geometric series operations **
-Product: 64
-Sum: 15
-Maximum: 8
-Minimum: 1
-** Harmonic series operations **
-Product: 0.0416667
-Sum: 2.08333
-Maximum: 1
-Minimum: 0.25
-Deleting 2 series...
- *** Memory cleanded up ***
-Deleting 132 series...
- *** Memory cleanded up ***
+
+/** Wynik dzialania programu:
+brachwal@vbox:[build]$ ./map 
+Point: KRK (19.9383, 50.0614)
+Point: NYC (-74.0059, 40.7127)
+Point: PRT (41.1621, -8.62195)
+Point: IRK (52.2833, 104.283)
+Distance : None (0, 0)
+Distance : NYC-PRT (115.168, -49.3347)
+Point: IRK (52.2833, 104.283)
 */
