@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcontainer_lib.a  CMakeFiles/container_lib.dir/src/Container.cpp.o
+/usr/bin/ranlib libcontainer_lib.a

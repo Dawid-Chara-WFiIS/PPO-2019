@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Container.h
+iostream
+-
+algorithm
+-
+
+/home/dawid/PPO2019/utils/Container/Main.cpp
+iostream
+-
+Container.h
+/home/dawid/PPO2019/utils/Container/Container.h
+
+/home/dawid/PPO2019/utils/Container/src/Container.cpp
+Container.h
+/home/dawid/PPO2019/utils/Container/src/Container.h
+

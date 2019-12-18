@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Complex.h
+iostream
+-
+Rational.h
+../include/Rational.h
+cmath
+-
+
+../include/Rational.h
+iostream
+-
+
+/home/dawid/PPO2019/utils/Complex/src/Complex.cpp
+Complex.h
+/home/dawid/PPO2019/utils/Complex/src/Complex.h
+
+/home/dawid/PPO2019/utils/Complex/src/Rational.cpp
+
