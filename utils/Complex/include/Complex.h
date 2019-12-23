@@ -6,6 +6,7 @@
 class Complex
 {
     public:
+        friend std::ostream & operator << (std::ostream &out, Complex& complex);
         static double Modulo(Complex);
         Complex(const double re, const double im) : _re(re), _im(im) {}
         Complex() = default;
@@ -35,6 +36,7 @@ class Complex
             result._im = _im * (double) object;
             return result;
         }
+        
         
 
     private:

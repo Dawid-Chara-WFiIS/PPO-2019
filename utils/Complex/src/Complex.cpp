@@ -12,3 +12,8 @@ double Complex::Modulo(Complex object)
 }
 
 
+std::ostream & operator << (std::ostream &out, Complex& complex)
+{
+    out << "Overloaded << operator, result of usage:\n";
+    complex.Print();
+}

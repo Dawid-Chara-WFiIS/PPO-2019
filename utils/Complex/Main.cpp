@@ -21,7 +21,7 @@ int main() {
    c.Print();
   
    Complex d((a+6.0)*r);
-   d.Print();
+   std::cout << d;
 
    return 0;
 }

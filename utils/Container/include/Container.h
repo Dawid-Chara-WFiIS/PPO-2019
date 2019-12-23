@@ -6,7 +6,7 @@ typedef double type;
 
 class Container{
         public:
-            friend std::ostream & operator << (std::ostream &out,  Container& cont);
+            friend std::ostream & operator << (std::ostream& out,  Container& cont);
             Container() : _size(0) {}
             Container(type*, unsigned int);
             Container(const Container &other) : _size(other._size)
