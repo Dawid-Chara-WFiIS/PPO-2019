@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/BContainer.h
+Box.h
+../include/Box.h
+vector
+-
+iostream
+-
+
+../include/Box.h
+iostream
+-
+
+../include/Volume.h
+Box.h
+../include/Box.h
+BContainer.h
+../include/BContainer.h
+
+/home/dawid/PPO2019/Lab11/Main.cpp
+iostream
+-
+BContainer.h
+/home/dawid/PPO2019/Lab11/BContainer.h
+Volume.h
+/home/dawid/PPO2019/Lab11/Volume.h
+
+/home/dawid/PPO2019/Lab11/src/BContainer.cpp
+BContainer.h
+/home/dawid/PPO2019/Lab11/src/BContainer.h
+
+/home/dawid/PPO2019/Lab11/src/Box.cpp
+Box.h
+/home/dawid/PPO2019/Lab11/src/Box.h
+
+/home/dawid/PPO2019/Lab11/src/Volume.cpp
+Volume.h
+/home/dawid/PPO2019/Lab11/src/Volume.h
+
