@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/Main.dir/Main.cpp.o CMakeFiles/Main.dir/src/SmartPointer.cpp.o  -o Main 

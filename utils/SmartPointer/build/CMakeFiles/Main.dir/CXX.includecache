@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/SmartPointer.h
+iostream
+-
+
+/home/dawid/PPO2019/utils/SmartPointer/Main.cpp
+iostream
+-
+SmartPointer.h
+/home/dawid/PPO2019/utils/SmartPointer/SmartPointer.h
+
+/home/dawid/PPO2019/utils/SmartPointer/src/SmartPointer.cpp
+
