@@ -1,6 +1,5 @@
 #include "Box.h"
 #include "BContainer.h"
-typedef bool (*comparator)(Box*, Box*);
 
 class Volume{
     public:
@@ -9,5 +8,6 @@ class Volume{
         double operator ()(const Box&);
 };
 
+using comparator =  bool(*)(Box*, Box*);
 bool smaller(Box*, Box*);
 Box* find_box_optimum(BContainer&, comparator);
