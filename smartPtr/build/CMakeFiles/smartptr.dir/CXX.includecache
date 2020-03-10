@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/SmartPtr.h
+TestClass.h
+../include/TestClass.h
+
+../include/TestClass.h
+iostream
+-
+string
+-
+
+/home/dawid/Pulpit/oop_problems/smartPtr/Main.cpp
+SmartPtr.h
+/home/dawid/Pulpit/oop_problems/smartPtr/SmartPtr.h
+TestClass.h
+/home/dawid/Pulpit/oop_problems/smartPtr/TestClass.h
+iostream
+-
+
+/home/dawid/Pulpit/oop_problems/smartPtr/src/SmartPtr.cpp
+SmartPtr.h
+/home/dawid/Pulpit/oop_problems/smartPtr/src/SmartPtr.h
+
+/home/dawid/Pulpit/oop_problems/smartPtr/src/TestClass.cpp
+TestClass.h
+/home/dawid/Pulpit/oop_problems/smartPtr/src/TestClass.h
+

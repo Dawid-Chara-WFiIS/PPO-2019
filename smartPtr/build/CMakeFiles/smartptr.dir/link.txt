@@ -1,0 +1,1 @@
+/usr/bin/c++  -lm  -rdynamic CMakeFiles/smartptr.dir/Main.cpp.o CMakeFiles/smartptr.dir/src/SmartPtr.cpp.o CMakeFiles/smartptr.dir/src/TestClass.cpp.o  -o smartptr 
